@@ -4,9 +4,8 @@ use bevy::{
     ecs::{
         query::With,
         system::{Commands, Query, Res},
-        world::Mut,
     },
-    input::{keyboard::KeyCode, ButtonInput, InputPlugin},
+    input::{keyboard::KeyCode, ButtonInput},
     math::Vec3,
     prelude::default,
     sprite::SpriteBundle,
