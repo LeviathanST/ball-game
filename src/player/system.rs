@@ -20,7 +20,7 @@ use super::component::Player;
 pub const PLAYER_SPEED: f32 = 500.0;
 pub const PLAYER_SIZE: f32 = 64.0; // This is the player sprites size
 
-/*--------------Player-----------------*/
+/*--------------Function-----------------*/
 pub fn spawn_player(
     mut commands: Commands,
     window_query: Query<&Window, With<PrimaryWindow>>,
@@ -46,16 +46,28 @@ pub fn player_movement(
     if let Ok(mut transform) = player_query.get_single_mut() {
         let mut direction = Vec3::new(0.0, 0.0, 0.0);
 
-        if keyboard_input.pressed(KeyCode::ArrowLeft) || keyboard_input.pressed(KeyCode::KeyA) {
+        if keyboard_input.pressed(KeyCode::ArrowRight)
+            || keyboard_input.pressed(KeyCode::KeyA)
+            || keyboard_input.pressed(KeyCode::KeyH)
+        {
             direction += Vec3::new(-1.0, 0.0, 0.0);
         }
-        if keyboard_input.pressed(KeyCode::ArrowRight) || keyboard_input.pressed(KeyCode::KeyD) {
+        if keyboard_input.pressed(KeyCode::ArrowLeft)
+            || keyboard_input.pressed(KeyCode::KeyD)
+            || keyboard_input.pressed(KeyCode::KeyL)
+        {
             direction += Vec3::new(1.0, 0.0, 0.0);
         }
-        if keyboard_input.pressed(KeyCode::ArrowUp) || keyboard_input.pressed(KeyCode::KeyW) {
+        if keyboard_input.pressed(KeyCode::ArrowUp)
+            || keyboard_input.pressed(KeyCode::KeyW)
+            || keyboard_input.pressed(KeyCode::KeyK)
+        {
             direction += Vec3::new(0.0, 1.0, 0.0);
         }
-        if keyboard_input.pressed(KeyCode::ArrowDown) || keyboard_input.pressed(KeyCode::KeyS) {
+        if keyboard_input.pressed(KeyCode::ArrowDown)
+            || keyboard_input.pressed(KeyCode::KeyS)
+            || keyboard_input.pressed(KeyCode::KeyJ)
+        {
             direction += Vec3::new(0.0, -1.0, 0.0);
         }
 

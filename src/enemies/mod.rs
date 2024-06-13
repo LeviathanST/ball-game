@@ -1,3 +1,3 @@
 pub mod plugin;
-mod component;
-mod system;
+pub mod component;
+pub mod system;
